@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Luis Camargo</title>
+    <link rel="stylesheet" href="public\assets\css\styles.css">
+</head>
+<body>
+    <!-- Fondo SVG tipo paisaje/planicie generado a mano -->
+    <div class="background-svg">
+        <svg width="100%" height="100vh" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <!-- Cielo con gradiente -->
+            <rect width="1440" height="800" fill="url(#sky)"/>
+            <defs>
+                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#aee9f7"/>
+                    <stop offset="100%" stop-color="#e0f7fa"/>
+                </linearGradient>
+            </defs>
+            <!-- Sol -->
+            <circle cx="1200" cy="150" r="60" fill="#fff9c4" opacity="0.8"/>
+            <!-- Montañas -->
+            <path d="M0 600 Q 300 400 600 600 T 1200 600 T 1440 700 V800 H0Z" fill="#b2dfdb"/>
+            <path d="M0 700 Q 400 500 900 700 T 1440 750 V800 H0Z" fill="#80cbc4"/>
+            <!-- Planicie -->
+            <rect y="700" width="1440" height="100" fill="#c8e6c9"/>
+        </svg>
+    </div>
+
+    <!-- Encabezado principal con tu nombre, presentación y navegación -->
+    <header>
+        <h1>Luis Camargo</h1>
+        <p>Senior | Centro Supérate Fundación Alberto Motta San Miguelito</p>
+        <p>Estudiante de Inglés, Matemáticas, Ciencias Tecnológicas, HTML, CSS, Python, Django</p>
+        <!-- Navegación de secciones en el header -->
+        <nav class="sections-nav">
+            <button class="section-btn" data-section="about">Sobre mí</button>
+            <button class="section-btn" data-section="studies">Estudios</button>
+            <button class="section-btn" data-section="skills">Habilidades</button>
+            <button class="section-btn" data-section="contact">Contacto</button>
+            <button class="section-btn" data-section="snake">Juego Snake</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Avatar élfico SVG, único y generado a mano -->
+        <div class="avatar-container">
+            <svg width="140" height="180" viewBox="0 0 140 180" xmlns="http://www.w3.org/2000/svg">
+                <!-- Cabeza -->
+                <ellipse cx="70" cy="70" rx="45" ry="55" fill="#e0cda5" stroke="#8d6e63" stroke-width="2"/>
+                <!-- Orejas élficas -->
+                <polygon points="20,70 5,40 35,60" fill="#e0cda5" stroke="#8d6e63" stroke-width="2"/>
+                <polygon points="120,70 135,40 105,60" fill="#e0cda5" stroke="#8d6e63" stroke-width="2"/>
+                <!-- Cabello -->
+                <path d="M25 60 Q70 10 115 60 Q100 30 70 30 Q40 30 25 60Z" fill="#7e5a3b"/>
+                <!-- Ojos -->
+                <ellipse cx="55" cy="80" rx="7" ry="10" fill="#fff"/>
+                <ellipse cx="85" cy="80" rx="7" ry="10" fill="#fff"/>
+                <ellipse cx="55" cy="83" rx="3" ry="5" fill="#4e342e"/>
+                <ellipse cx="85" cy="83" rx="3" ry="5" fill="#4e342e"/>
+                <!-- Nariz -->
+                <ellipse cx="70" cy="95" rx="4" ry="2" fill="#bcaaa4"/>
+                <!-- Boca -->
+                <path d="M62 110 Q70 115 78 110" stroke="#bcaaa4" stroke-width="2" fill="none"/>
+                <!-- Cuerpo -->
+                <rect x="45" y="120" width="50" height="40" rx="20" fill="#90caf9" stroke="#1976d2" stroke-width="2"/>
+                <!-- Capa -->
+                <path d="M45 140 Q70 170 95 140" fill="#a5d6a7"/>
+            </svg>
+        </div>
+    </main>
+
+    <!-- Modales para cada sección, ocultos por defecto -->
+    <div class="modal" id="modal-about">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Sobre mí</h2>
+            <p>¡Hola! Soy Luis Camargo, estudiante senior en el Centro Supérate Fundación Alberto Motta San Miguelito. Me apasiona la tecnología, el aprendizaje y los retos. Busco siempre superarme y ayudar a los demás a crecer.</p>
+        </div>
+    </div>
+    <div class="modal" id="modal-studies">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Estudios</h2>
+            <p>Actualmente estudio Inglés, Matemáticas, Ciencias Tecnológicas, y lenguajes de programación como HTML, CSS, Python y Django.</p>
+        </div>
+    </div>
+    <div class="modal" id="modal-skills">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Habilidades</h2>
+            <ul>
+                <li>Desarrollo web (HTML, CSS, JavaScript)</li>
+                <li>Programación en Python y Django</li>
+                <li>Resolución de problemas</li>
+                <li>Trabajo en equipo</li>
+                <li>Comunicación efectiva</li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal" id="modal-contact">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Contacto</h2>
+            <p>Puedes contactarme a través del Centro Supérate o por correo: luis.camargo@email.com</p>
+        </div>
+    </div>
+    <!-- Modal del juego Snake -->
+    <div class="modal" id="modal-snake">
+        <div class="modal-content" style="max-width: 480px; width: 98vw;">
+            <span class="close-btn">&times;</span>
+            <h2>Juego Snake</h2>
+            <div id="snake-score" style="font-size:1.2rem; margin-bottom:0.5rem;">Puntaje: 0</div>
+            <canvas id="snake-canvas" width="400" height="400" style="background:#e0f7fa; border-radius:16px; box-shadow:0 2px 16px #b2dfdb;"></canvas>
+            <div style="margin:1rem 0 0.5rem 0;">
+                <label for="snake-color">Color de la serpiente: </label>
+                <input type="color" id="snake-color" value="#388e3c" style="width:40px; height:32px; border:none; cursor:pointer; vertical-align:middle;">
+                <button id="snake-restart" style="margin-left:1.5rem; padding:0.5rem 1.2rem; border-radius:12px; border:none; background:#a5d6a7; color:#2e3d27; font-family:'Cinzel',serif; font-size:1rem; cursor:pointer;">Reiniciar</button>
+            </div>
+            <div style="font-size:0.95rem; color:#388e3c; margin-top:0.5rem;">Usa las flechas o las teclas W A S D para mover la serpiente.</div>
+        </div>
+    </div>
+
+    <!-- Pie de página fijo al fondo con derechos reservados -->
+    <footer>
+        <p>Hecho con pasión por Luis Camargo &copy; 2024</p>
+        <small>Todos los derechos reservados. &copy; 2024 Luis Camargo. Prohibida su reproducción total o parcial. <br>Copyright &copy; 2024 - AidSync</small>
+    </footer>
+
+    <!-- Enlaza el archivo JavaScript principal -->
+    <script src="public\assets\js\script.js"></script>
+</body>
+</html>
